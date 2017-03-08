@@ -44,7 +44,7 @@ treatedData <- summarise_each(agrupado, funs(mean))
 
 
 write.csv(treatedData, "treatedData.csv")
-
+write.table(treatedData, "treatedDataTable.txt", row.names = FALSE)
 
 # At last, this in prepare the new code book
 

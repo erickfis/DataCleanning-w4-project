@@ -69,6 +69,7 @@ It will do the following:
 - groups the dataset by subject then by activities
 - stores the new, clean and tidy dataset into the object called treatedData
 - stores the new, clean and tidy dataset into the file “treatedData.csv”
+- stores the new, clean and tidy dataset into the file “treatedDataTable.txt”
 - calls the prepareCodeBook.R scrit to write a new code book to the file “newCodeBook.txt”
 
 
