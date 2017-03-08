@@ -21,28 +21,30 @@ prepareCodeBook <- function(treatedData) {
         
 # Now we get the variables names in the new dataset
 
-        selVars <- colnames(treatedData)
-        
+        selVars <- unique(treatedData$variable)
+        selVars <- as.character(selVars)
 
 # lets add units information for each variable
         
         
-        selVars[grep("^t", selVars)] <- paste(selVars[grep("^t", selVars)], " - time")
-        selVars[grep("^f", selVars)] <- paste(selVars[grep("^f", selVars)], " - frequency")
+        selVars[grep("^t", selVars)] <- paste(selVars[grep("^t", selVars)], " - time \n")
+        selVars[grep("^f", selVars)] <- paste(selVars[grep("^f", selVars)], " - frequency \n")
       
         
         
         
 # lets feed some more description between the two
         
-        mDescription <- "\n \nThe selected variables in the new data set are listed below allong with their units: \n \n "
+        title <- "#Updated Code Book"
+        
+        mDescription <- "\n \n#Variables used \n \n \nThe selected variables in the new data set are listed below allong with their units: \n \n "
         
 # Now we need to put those info on a new codebook
         
         
         
-        fileConn<-file("newCodeBook.txt")
-        writeLines(c(finfo, mDescription, selVars), fileConn)
+        fileConn<-file("newCodeBook.md")
+        writeLines(c(title, finfo, mDescription, selVars), fileConn)
         close(fileConn)
         
         

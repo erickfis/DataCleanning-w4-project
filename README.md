@@ -65,8 +65,10 @@ It will do the following:
 - downloads the UCI dataset
 - extracts it to the working directory
 - prepares the datasets through prepareDF.R – details in the next section
-- binds the two datasets into one
-- groups the dataset by subject then by activities
+- binds the two datasets into one, to a really wide data set.
+- melt, sort and group the data, creatting a really tall data set
+- But this new data set brings the average of each variable for each activity and each subject.
+
 - stores the new, clean and tidy dataset into the object called treatedData
 - stores the new, clean and tidy dataset into the file “treatedData.csv”
 - stores the new, clean and tidy dataset into the file “treatedDataTable.txt”
