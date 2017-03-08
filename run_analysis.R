@@ -13,10 +13,10 @@ library("dplyr")
 library("reshape2")
 
 
-### this will download the UCI Samsung data
-dir.create("~/project")
-setwd("~/project")
+## please set your working direcory to be where this file is located
 
+
+### this will download the UCI Samsung data
 fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(fileUrl, "uci-data.zip", method = "curl")
 zipF<- "uci-data.zip"
