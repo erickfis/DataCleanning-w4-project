@@ -1,5 +1,7 @@
 # This script will create an updated code book for the data set we are preparing
-# 
+# It will the called automatically by the main scrip
+# It will only work after the main script was run.
+
 # First, it will get the description of the variables through reading the file 
 # features_info.txt
 # Then, it will get a list of the variables through reading the file features.txt
@@ -21,9 +23,19 @@ prepareCodeBook <- function(treatedData) {
 
         selVars <- colnames(treatedData)
         
+
+# lets add units information for each variable
+        
+        
+        selVars[grep("^t", selVars)] <- paste(selVars[grep("^t", selVars)], " - time")
+        selVars[grep("^f", selVars)] <- paste(selVars[grep("^f", selVars)], " - frequency")
+      
+        
+        
+        
 # lets feed some more description between the two
         
-        mDescription <- "\n \n The selected variables are listed below: \n \n "
+        mDescription <- "\n \nThe selected variables in the new data set are listed below allong with their units: \n \n "
         
 # Now we need to put those info on a new codebook
         
